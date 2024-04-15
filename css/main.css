@@ -235,29 +235,30 @@
   }
 }
 
-.chefs .heading .chefs-span {
+.chefs .heading .chefs-span, .gallery .heading .gallery-span{
   font-family: "Inter";
   color: #7f7f90;
   font-size: 14px;
   font-weight: 400;
   text-align: center;
   display: block;
-  position: relative;
-  top: 80px;
 }
 
-.chefs .heading h2 {
+:is(.chefs, .gallery) .heading h2 {
   font-family: "Amatic SC";
   font-size: 50px;
   font-weight: 400;
   color: #212529;
   text-align: center;
-  position: relative;
-  top: 80px;
 }
 
-.chefs .heading h2 span {
+:is(.chefs, .gallery) .heading h2 span {
   color: #ce1212;
+}
+
+.chefs .heading{
+  position: relative;
+  top: 80px;
 }
 
 .chefs .chef-info {
@@ -339,6 +340,75 @@
 
 }
 
+.gallery{
+  background-color: #eeeeee;
+  position: relative;
+  top: 180px;
+}
+
+.gallery .heading{
+padding-top: 100px;  
+}
+
+.gallery .meals{
+  columns: 3 300px;
+  column-gap: 15px;
+  width: 85%;
+  margin: 40px auto;
+}
+
+.gallery .meals .item img{
+  width: 100%;
+  display: block;
+  transition: scale 0.5s;
+}
+
+.gallery .meals .inner{
+  border: white 5px solid;
+margin-bottom: 15px;
+break-inside: avoid;
+position: relative;
+overflow: hidden;
+}
+
+.gallery .meals .inner .background{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transform: translateY(110%);
+  transition: transform 0.5s;
+}
+.gallery .meals .inner:hover .background{
+  transform: translateY(0%);
+}
+.gallery .meals .inner:hover img{
+  scale: 1.1;
+}
+
+.gallery .meals .inner .background h2{
+  color: white;
+  font-size: 24px;
+  font-family: "Inter";
+  font-weight: 700;
+  text-align: center;
+margin: 0 10px;
+}
+
+.gallery .meals .inner .background p{
+color: #ddd;
+font-family: "Open Sans";
+font-size: 1rem;
+font-weight: 400;
+text-align: center;
+margin: 0 10px;
+}
 
 
 @media screen and (max-width: 995px) {
