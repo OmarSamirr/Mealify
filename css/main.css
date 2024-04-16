@@ -3,7 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+html{
+  scroll-behavior: smooth;
+}
 .navbar {
   box-shadow: 2px 4px 7px lightgrey;
   background-color: white;
@@ -143,6 +145,7 @@
   padding: 0.75rem 1.5rem;
   text-decoration: none;
   border-radius: 0 2rem 2rem;
+  transition: background-color 0.5s;
 }
 
 .header .content .watch {
@@ -154,6 +157,7 @@
   justify-content: center;
   align-items: center;
   position: relative;
+  transition: color 0.5s;
 }
 
 .header .content .watch span {
@@ -190,7 +194,8 @@
   color: #ce1212;
 }
 
-.header .content .book:hover {
+.header .content .book:hover,
+button:hover {
   background-color: #e61414;
 }
 
@@ -235,7 +240,9 @@
   }
 }
 
-.chefs .heading .chefs-span, .gallery .heading .gallery-span{
+.chefs .heading .chefs-span,
+.gallery .heading .gallery-span,
+.contact .heading .contact-span {
   font-family: "Inter";
   color: #7f7f90;
   font-size: 14px;
@@ -244,7 +251,7 @@
   display: block;
 }
 
-:is(.chefs, .gallery) .heading h2 {
+:is(.chefs, .gallery, .contact) .heading h2 {
   font-family: "Amatic SC";
   font-size: 50px;
   font-weight: 400;
@@ -252,11 +259,11 @@
   text-align: center;
 }
 
-:is(.chefs, .gallery) .heading h2 span {
+:is(.chefs, .gallery, .contact) .heading h2 span {
   color: #ce1212;
 }
 
-.chefs .heading{
+.chefs .heading {
   position: relative;
   top: 80px;
 }
@@ -269,7 +276,7 @@
   justify-content: space-around;
   margin: auto;
 }
-.chefs .chef-info .inner{
+.chefs .chef-info .inner {
   padding: 1rem;
   width: 33.3333%;
 }
@@ -282,10 +289,9 @@
   box-shadow: 2px 4px 7px lightgrey;
   transition: scale 0.4s;
   position: relative;
-  
 }
 
-.chefs .chef-info .item:hover{
+.chefs .chef-info .item:hover {
   scale: 1.1;
 }
 
@@ -293,7 +299,7 @@
   width: 100%;
 }
 
-.chefs .chef-info .item h3{
+.chefs .chef-info .item h3 {
   font-size: 18px;
   color: #212529;
   font-family: "Inter";
@@ -301,77 +307,77 @@
   margin: 0.5rem;
 }
 
-.chefs .chef-info .item span{
+.chefs .chef-info .item span {
   font-size: 14px;
   color: #7f7f90;
   font-family: "Open Sans";
   font-weight: 400;
 }
 
-.chefs .chef-info .item p{
+.chefs .chef-info .item p {
   font-size: 15px;
   color: #7f7f90;
   font-family: "Open Sans";
   font-weight: 400;
   font-style: italic;
-  margin: 1rem 2rem 2rem ;
+  margin: 1rem 2rem 2rem;
 }
 
-.chefs .chef-info .item .social{
+.chefs .chef-info .item .social {
   position: absolute;
   right: -15%;
   top: 5%;
   background-color: #ffffff50;
   padding: 0 1rem;
-  transition: right 0.4s ;
+  transition: right 0.4s;
   border-radius: 5px;
 }
 
-.chefs .chef-info .item:hover .social{
+.chefs .chef-info .item:hover .social {
   right: 3%;
   transition-delay: 0.4s;
 }
 
-.chefs .chef-info .item a{
+.chefs .chef-info .item a {
   display: block;
   text-decoration: none;
   color: #7f7f90;
   margin: 20px 0;
-
 }
 
-.gallery{
+.gallery {
   background-color: #eeeeee;
   position: relative;
   top: 180px;
 }
 
-.gallery .heading{
-padding-top: 100px;  
+.gallery .heading {
+  padding-top: 100px;
 }
 
-.gallery .meals{
+.gallery .meals {
   columns: 3 300px;
   column-gap: 15px;
   width: 85%;
   margin: 40px auto;
+  padding-bottom: 100px;
 }
 
-.gallery .meals .item img{
+.gallery .meals .item img {
   width: 100%;
   display: block;
   transition: scale 0.5s;
 }
 
-.gallery .meals .inner{
+.gallery .meals .inner {
   border: white 5px solid;
-margin-bottom: 15px;
-break-inside: avoid;
-position: relative;
-overflow: hidden;
+  margin-bottom: 15px;
+  break-inside: avoid;
+  position: relative;
+  overflow: hidden;
 }
 
-.gallery .meals .inner .background{
+.gallery .meals .inner .background {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -385,30 +391,147 @@ overflow: hidden;
   transform: translateY(110%);
   transition: transform 0.5s;
 }
-.gallery .meals .inner:hover .background{
+.gallery .meals .inner:hover .background {
   transform: translateY(0%);
 }
-.gallery .meals .inner:hover img{
+.gallery .meals .inner:hover img {
   scale: 1.1;
 }
 
-.gallery .meals .inner .background h2{
+.gallery .meals .inner .background h2 {
   color: white;
   font-size: 24px;
   font-family: "Inter";
   font-weight: 700;
   text-align: center;
-margin: 0 10px;
+  margin: 0 10px;
 }
 
-.gallery .meals .inner .background p{
-color: #ddd;
-font-family: "Open Sans";
-font-size: 1rem;
-font-weight: 400;
-text-align: center;
-margin: 0 10px;
+.gallery .meals .inner .background p {
+  color: #ddd;
+  font-family: "Open Sans";
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: center;
+  margin: 0 10px;
 }
+
+.contact .heading {
+  margin-top: 300px;
+}
+
+.contact .container {
+  width: 85%;
+  margin: auto;
+}
+.contact .info {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.contact .info .item {
+  flex-basis: calc((100% - 10px) / 2);
+  background-color: #f5f5f5;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.contact .info .item .icon {
+  width: 50px;
+  height: 50px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ce1212;
+  border-radius: 50%;
+}
+
+.contact .info .item .icon i {
+  color: white;
+  font-size: 18px;
+}
+
+.contact .info .item .content {
+  width: fit-content;
+  display: inline-flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+.contact .info .item .content h3 {
+  font-family: "Inter";
+  color: #7d7d7d;
+  font-size: 20px;
+  font-weight: 700;
+}
+.contact .info .item .content :is(a, p) {
+  font-size: 1rem;
+  color: #212529;
+  font-family: "Open Sans";
+  text-decoration: none;
+}
+textarea, input{
+  font-size: 0.85rem;
+  color: #212529;
+  font-family: "Open Sans";
+}
+.contact .form{
+  box-shadow: 0px 0px 7px lightgray;
+  overflow: auto;
+   margin-top: 20px;
+}
+.contact form {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  gap: 10px;
+ 
+}
+input[placeholder="Your Name"],
+[placeholder="Your Email"] {
+  width: calc((100% - 10px) / 2);
+  outline: none;
+  border: 2px solid #E8E3E3;
+  padding: 20px;
+  transition: 0.7s;
+}
+input[placeholder="Subject"] {
+  width: 100%;
+  outline: none;
+  border: 2px solid #E8E3E3;
+  transition: 0.7s;
+  padding: 20px;
+}
+textarea {
+  width: 100%;
+  outline: none;
+  border: 2px solid #E8E3E3;
+  padding: 20px;
+  transition: 0.7s;
+}
+button {
+  border-radius: 2rem;
+  transition: background-color 0.5s;
+  font-family: "Open Sans";
+  color: white;
+  font-size: 15px;
+  background-color: #ce1212;
+  padding: 0.75rem 2rem;
+  border: none;
+  margin: 20px auto;
+  display: block;
+}
+input:focus, textarea:focus {
+  border: 2px solid #ce1212;
+}
+
+iframe{
+  margin: 20px 0;
+}
+
 
 
 @media screen and (max-width: 995px) {
@@ -434,14 +557,14 @@ margin: 0 10px;
   .chefs .chef-info .inner {
     width: 50%;
   }
-  .chefs .chef-info{
+  .chefs .chef-info {
     flex-wrap: wrap;
     justify-content: flex-start;
     /* width: 82%; */
   }
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
   .chefs .chef-info .inner {
     width: 100%;
   }
