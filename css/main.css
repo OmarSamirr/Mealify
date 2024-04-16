@@ -3,8 +3,17 @@
   padding: 0;
   box-sizing: border-box;
 }
-html{
+html {
   scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #1e1e1e;
 }
 .navbar {
   box-shadow: 2px 4px 7px lightgrey;
@@ -473,42 +482,42 @@ button:hover {
   font-family: "Open Sans";
   text-decoration: none;
 }
-textarea, input{
+textarea,
+input {
   font-size: 0.85rem;
   color: #212529;
   font-family: "Open Sans";
 }
-.contact .form{
+.contact .form {
   box-shadow: 0px 0px 7px lightgray;
   overflow: auto;
-   margin-top: 20px;
+  margin-top: 20px;
 }
 .contact form {
   display: flex;
   flex-wrap: wrap;
   padding: 20px;
   gap: 10px;
- 
 }
 input[placeholder="Your Name"],
 [placeholder="Your Email"] {
   width: calc((100% - 10px) / 2);
   outline: none;
-  border: 2px solid #E8E3E3;
+  border: 2px solid #e8e3e3;
   padding: 20px;
   transition: 0.7s;
 }
 input[placeholder="Subject"] {
   width: 100%;
   outline: none;
-  border: 2px solid #E8E3E3;
+  border: 2px solid #e8e3e3;
   transition: 0.7s;
   padding: 20px;
 }
 textarea {
   width: 100%;
   outline: none;
-  border: 2px solid #E8E3E3;
+  border: 2px solid #e8e3e3;
   padding: 20px;
   transition: 0.7s;
 }
@@ -524,15 +533,155 @@ button {
   margin: 20px auto;
   display: block;
 }
-input:focus, textarea:focus {
+.contact input:focus,
+textarea:focus {
   border: 2px solid #ce1212;
 }
 
-iframe{
+iframe {
   margin: 20px 0;
 }
 
+.footer {
+  margin-top: 60px;
+  background-color: #000;
+  overflow: auto;
+}
+.footer .container {
+  width: 85%;
+  margin: 40px auto;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+.footer .social-media h2 {
+  font-family: "Open Sans";
+  color: white;
+  font-weight: 700;
+  font-size: 30px;
+}
+.footer .dot {
+  color: #ce1212;
+}
+.footer .social-media img {
+  width: 100%;
+}
+.footer .social-media .image {
+  width: 40px;
+}
+.footer .social-media {
+  width: 38%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.footer p {
+  font-family: "Open Sans";
+  color: white;
+  font-weight: 400;
+  font-size: 1rem;
+  padding-bottom: 10px;
+}
+.footer h3 {
+  font-family: "Inter";
+  color: white;
+  font-weight: 700;
+  font-size: 1.2rem;
+  padding-bottom: 10px;
+}
+.footer .social-media h3 {
+  text-align: center;
+  flex-basis: 100%;
+  border-bottom: 2px #7d7d7d solid;
+}
+.footer .social-media .icons {
+  display: flex;
+  width: 100%;
+  padding: 15px 0;
+}
+.footer .social-media .icons a {
+  text-decoration: none;
+  color: white;
+  font-size: 24px;
+  flex-basis: 25%;
+  text-align: center;
+}
+.footer .subscribe button {
+  border-radius: 0;
+  display: inline;
+  padding: 10px;
+}
+.footer .subscribe input {
+  padding: 10px;
+  width: 80%;
+  outline: none;
+}
+.footer .subscribe ul {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 20px;
+}
+.footer .subscribe a {
+  text-decoration: none;
+  color: white;
+}
+.footer .subscribe li {
+  flex-basis: calc((100% - 20px) / 2);
+  padding: 5px 0;
+  font-size: 1rem;
+  font-family: "Open Sans";
+  font-weight: 400;
+  list-style-type: none;
+  transition: all 0.5s;
+  padding: 5px;
+}
+.footer .subscribe li:hover {
+  background-color: #222222;
+  transform: translateX(5px);
+}
+.footer .touch {
+  width: 35%;
+}
+.footer .touch i {
+  color: #ce1212;
+  font-size: 22px;
+  padding: 10px;
+}
+.footer .touch span,
+.footer .touch a {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  font-family: "Open Sans";
+}
+.footer .touch li {
+  display: flex;
+  align-items: center;
+}
 
+@media screen and (max-width: 1200px) {
+  .navbar .menu {
+    display: inline-flex;
+  }
+  .navbar .mode {
+    display: inline-flex;
+    margin: 2rem;
+    gap: 20px;
+  }
+  .navbar .list {
+    display: none;
+  }
+  .footer .container {
+    flex-wrap: wrap;
+  }
+  .footer .subscribe {
+    order: 1;
+  }
+  .footer .social-media,
+  .footer .touch {
+    width: calc((100% - 20px) / 2);
+  }
+}
 
 @media screen and (max-width: 995px) {
   .header .plate,
@@ -544,16 +693,7 @@ iframe{
     justify-content: center;
     width: 100%;
   }
-  .navbar .menu {
-    display: inline-flex;
-  }
-  .navbar .mode {
-    display: inline-flex;
-    margin: 2rem 0rem;
-  }
-  .navbar .list {
-    display: none;
-  }
+
   .chefs .chef-info .inner {
     width: 50%;
   }
@@ -562,10 +702,24 @@ iframe{
     justify-content: flex-start;
     /* width: 82%; */
   }
+  input[placeholder="Your Name"],
+  [placeholder="Your Email"] {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 768px) {
   .chefs .chef-info .inner {
+    width: 100%;
+  }
+  .contact .info .item {
+    flex-basis: 100%;
+  }
+  .footer .subscribe {
+    order: 0;
+  }
+  .footer .social-media,
+  .footer .touch {
     width: 100%;
   }
 }
