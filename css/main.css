@@ -181,16 +181,14 @@ html {
   position: relative;
 }
 
-/* .header .content .semi{
-    width: 2rem;
-    height: 4rem;
-    background-color: green;
-    position: absolute; 
-    left: 5px;
-    border-top-left-radius:2rem ;
-    border-bottom-left-radius:2rem ;
-    border: 10px solid gray;
-} */
+.header .content .semi {
+  width: 4rem;
+  height: 4rem;
+  background-image: linear-gradient(to right, #ce1212 50%, transparent 0%);
+  position: absolute;
+  left: 5px;
+  border-radius: 50%;
+}
 
 .header .content .buttons {
   display: flex;
@@ -347,11 +345,16 @@ button:hover {
   transition-delay: 0.4s;
 }
 
+.chefs .chef-info .item .social a:hover{
+  color: #434146;
+}
+
 .chefs .chef-info .item a {
   display: block;
   text-decoration: none;
   color: #7f7f90;
   margin: 20px 0;
+  transition: all 0.3s;
 }
 
 .gallery {
