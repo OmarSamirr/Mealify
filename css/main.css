@@ -1,3 +1,22 @@
+@font-face {
+  font-family: "Open Sans";
+  src: url(../Fonts/Open_Sans/OpenSans-VariableFont_wdth\,wght.ttf);
+}
+
+@font-face {
+  font-family: "Amatic SC";
+  src: url(../Fonts/Amatic_SC/AmaticSC-Bold.ttf);
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Amatic SC";
+  src: url(../Fonts/Amatic_SC/AmaticSC-Regular.ttf);
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Inter";
+  src: url(../Fonts/Inter/Inter-VariableFont_slnt\,wght.ttf);
+}
 * {
   margin: 0;
   padding: 0;
@@ -345,7 +364,7 @@ button:hover {
   transition-delay: 0.4s;
 }
 
-.chefs .chef-info .item .social a:hover{
+.chefs .chef-info .item .social a:hover {
   color: #434146;
 }
 
